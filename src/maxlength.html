@@ -14,13 +14,15 @@
 </head>
 <body>
   <input type="text" minLength="0" maxLength="6">
+  <span></span>
   <script>
     let el = document.querySelector('input');
     el.addEventListener('input', function(e){
+      const maxLength = parseInt(this.getAttribute('maxLength'));
       if(e.target.value.length > e.target.maxLength){
-        e.target.value = e.target.value.slice(0, e.target.maxLength)
+        e.target.value = e.target.value.slice(0, maxLength)
         console.log(e)
-        e.target.blur();
+        document.activeElement.blur()
       }
     })
   </script>
