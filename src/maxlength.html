@@ -18,7 +18,7 @@
     let el = document.querySelector('input');
     el.addEventListener('input', function(e){
       if(e.target.value.length > e.target.maxLength){
-        e.target.value = e.target.value.substr(0, e.target.maxLength)
+        e.target.value = e.target.value.slice(0, e.target.maxLength)
         console.log(e)
         e.target.blur();
       }
