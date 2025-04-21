@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>접근성</title>
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+  </style>
+</head>
+<body>
+  <img src="./bunny1.jpg" alt="" aria-describedby="promo-details">
+  <div class="sr-only" id="promo-details">
+    <p>안녕1</p>
+    <p>스크린리더2</p>
+    <p>스크린리더3</p>
+    <p>스크린리더4</p>
+  </div>
+</body>
+</html>
