@@ -6,15 +6,21 @@
   <title>접근성</title>
   <style>
     *{padding:0;margin:0;}
-    .sr-only {
+    /* .sr-only {
       position: absolute;
       width: 1px;
       height: 1px;
       margin: -1px;
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
-    }
-    .desc_box {
+    } */
+    .sr-only {
+      overflow: hidden;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      clip: rect(0, 0, 0, 0);
     }
     img{width:100%;object-fit:cover;}
   </style>
@@ -24,14 +30,14 @@
     <div class="wrap-depth2">
       <div class="wrap-depth3">
       <div class="desc_box">
-        <img src="./bunny1.jpg" alt="이벤트 안내 이미지">
-      <div class="sr-only">
-        <h2>이벤트 안내</h2>
-        <p>안녕1</p>
-        <p>스크린리더2</p>
-        <p>스크린리더3</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit eligendi aspernatur quibusdam iure voluptatum molestias voluptates! Magni, enim? Atque temporibus fuga architecto qui commodi perferendis numquam minus eos expedita laborum!</p>
-      </div>
+        <img src="./bunny1.jpg" alt="이벤트 안내 이미지" aria-describedby="promo-details" >
+        <div id="promo-details" class="sr-only">
+          <h2>이벤트 안내</h2>
+          <p>안녕1</p>
+          <p>스크린리더2</p>
+          <p>스크린리더3</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit eligendi aspernatur quibusdam iure voluptatum molestias voluptates! Magni, enim? Atque temporibus fuga architecto qui commodi perferendis numquam minus eos expedita laborum!</p>
+        </div>
       </div>
       <div class="desc_box">
         <img src="./bunny1.jpg" alt="이벤트 안내 이미지2" aria-describedby="promo-details2" >
