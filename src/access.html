@@ -13,6 +13,18 @@
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
     }
+    .wrap {
+      position:relative;
+      overflow:hidden;
+    }
+    .desc_box {
+      width:80%;
+      height:auto;
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:-1;
+    }
   </style>
 </head>
 <body>
@@ -23,15 +35,15 @@
     <p>스크린리더3</p>
     <p>스크린리더4</p>
   </div> -->
-  <figure aria-describedby="reading">
-    <img src="./bunny1.jpg" alt="이벤트 안내 이미지">
-    <figcaption class="sr-only" id="reading">
-      <h2>이벤트 안내</h2>
-      <p>안녕1</p>
-      <p>스크린리더2</p>
-      <p>스크린리더3</p>
-      <p>스크린리더4</p>
-    </figcaption>
-  </figure>
+  <div class="wrap">
+  <img src="./bunny1.jpg" alt="이벤트 안내 이미지">
+  <div class="desc_box">
+    <h2>이벤트 안내</h2>
+    <p>안녕1</p>
+    <p>스크린리더2</p>
+    <p>스크린리더3</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit eligendi aspernatur quibusdam iure voluptatum molestias voluptates! Magni, enim? Atque temporibus fuga architecto qui commodi perferendis numquam minus eos expedita laborum!</p>
+  </div>
+  </div>
 </body>
 </html>
