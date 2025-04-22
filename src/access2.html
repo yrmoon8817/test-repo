@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모바일 스킵네비게이션</title>
+  <style>
+    *{padding:0;margin:0;}
+    /* .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    } */
+    .sr-only {
+      overflow: hidden;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      clip: rect(0, 0, 0, 0);
+    }
+    img{width:100%;object-fit:cover;user-select: none;}
+    a{color:inherit;}
+  </style>
+</head>
+<body>
+  <div id="skip-menu" style="width:100%;height:50px;background-color:#000;color:#fff;display:flex;justify-content:space-between;box-sizing:border-box;padding:5px 80px;">
+    <a href="#header">header</a>
+    <a href="#content">content</a>
+    <a href="#footer">footer</a>
+  </div>
+  <div class="wrap">
+    <div class="wrap-depth2">
+      <div class="wrap-depth3">
+      <div class="desc_box">
+        <img src="./bunny1.jpg" alt="이벤트 안내 이미지" aria-describedby="promo-details" id="header">
+        <div id="promo-details" class="sr-only">
+          <h2>이벤트 안내</h2>
+          <p>안녕1</p>
+          <p>스크린리더2</p>
+          <p>스크린리더3</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit eligendi aspernatur quibusdam iure voluptatum molestias voluptates! Magni, enim? Atque temporibus fuga architecto qui commodi perferendis numquam minus eos expedita laborum!</p>
+        </div>
+      </div>
+      <div class="desc_box">
+        <img src="./bunny1.jpg" alt="이벤트 안내 이미지2" aria-describedby="promo-details2" id="content">
+      <div id="promo-details2" class="sr-only">
+        <h2>22222222</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit eligendi aspernatur quibusdam iure voluptatum molestias voluptates! Magni, enim? Atque temporibus fuga architecto qui commodi perferendis numquam minus eos expedita laborum!</p>
+      </div>
+      </div>
+      <div class="desc_box">
+        <img src="./bunny1.jpg" alt="이벤트 안내 이미지3" aria-describedby="promo-details3" id="footer">
+        <div id="promo-details3" class="sr-only">
+          <h2>333333333</h2>
+          <p>읽기 3333</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit eligendi aspernatur quibusdam iure voluptatum molestias voluptates! Magni, enim? Atque temporibus fuga architecto qui commodi perferendis numquam minus eos expedita laborum!</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
