@@ -27,7 +27,7 @@
   <span></span>
   <script>
   const el = document.querySelector('input');
-  let isComposing;
+  let isComposing=true;
   el.addEventListener('compositionstart', () => {
     isComposing=true;
   })
@@ -38,6 +38,7 @@
       console.log('in')
       el.value = el.value.slice(0, el.maxLength); // 초과 입력 방지
       el.blur();
+      isComposing=true;
     }
   });
   </script>
