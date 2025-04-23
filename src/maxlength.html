@@ -29,10 +29,11 @@
   const el = document.querySelector('input');
   el.addEventListener('input', () => {
     if (el.value.length >= el.maxLength) {
+      console.log('in1');
       // 조합 완료 후 길이가 maxLength면 blur
+      el.value = el.value.slice(0, el.maxLength); // 초과 입력 방지
       el.addEventListener('compositionend', function(){
-        console.log('in')
-        el.value = el.value.slice(0, el.maxLength); // 초과 입력 방지
+        console.log('in2');
         el.blur();
       })
     }
