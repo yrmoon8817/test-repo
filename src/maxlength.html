@@ -6,25 +6,58 @@
   <title>Document</title>
   <style>
     *{margin:0;padding:0;}
+    body{
+      width:100%;
+      height:100vh;
+      display:flex;
+
+      justify-content:center;
+      align-items:center;
+    }
     input {
-      max-width:300px;
+      font-size:30px;
+      padding:5px 10px;
+      max-width:500px;
       border:2px solid #000;
     }
   </style>
 </head>
 <body>
-  <input type="text" minLength="0" maxLength="6">
+  <input type="text" maxLength="6">
   <span></span>
   <script>
-    let el = document.querySelector('input');
-    el.addEventListener('input', function(e){
-      const maxLength = parseInt(this.getAttribute('maxLength'));
-      if(e.target.value.length > e.target.maxLength){
-        e.target.value = e.target.value.slice(0, maxLength)
-        console.log(e)
-        document.activeElement.blur()
-      }
-    })
+  const el = document.querySelector('input');
+  el.addEventListener('compositionend', () => {
+    // 조합 완료 후 길이가 maxLength면 blur
+    if (el.value.length >= el.maxLength){
+      el.value = el.value.slice(0, el.maxLength); // 초과 입력 방지
+      el.blur();
+    }
+  });
   </script>
+  <!-- 리액트버전 
+   import React, { useRef } from 'react';
+
+function InputComponent() {
+  const inputRef = useRef(null);
+
+  const handleCompositionEnd = () => {
+    const el = inputRef.current;
+    if (el.value.length >= el.maxLength) {
+      el.value = el.value.slice(0, el.maxLength); // 초과 입력 방지
+      el.blur();
+    }
+  };
+
+  return (
+    <input
+      ref={inputRef}
+      maxLength={6}
+      onCompositionEnd={handleCompositionEnd}
+    />
+  );
+}
+
+export default InputComponent; -->
 </body>
 </html>
